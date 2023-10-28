@@ -9,15 +9,15 @@ import light from "../../public/light.svg";
 export default function Home() {
   return (
     <>
-      <div className="mt-5 mr-5 flex justify-end">
+      <div className=" mt-5 mr-5 flex justify-end">
         <Link href="light">
           <Image priority src={light} alt="Toggle Theme" />
         </Link>
       </div>
 
-      <div className="ml-40 mt-10 mr-40">
-        <div className="flex font-semibold">Aashish Sharma</div>
-        <div className="font-medium">
+      <div className="mt-10">
+        <div className="flex justify-center font-semibold">Aashish Sharma</div>
+        <div className="flex justify-center text-center font-medium">
           This my site where I have stuff, no idea why I needed this but i have
           a domain so might as well. Why are you even here?
         </div>
