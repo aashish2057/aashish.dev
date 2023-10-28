@@ -15,7 +15,7 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="ml-40 mt-10">
+      <div className="ml-40 mt-10 mr-40">
         <div className="flex font-semibold">Aashish Sharma</div>
         <div className="font-medium">
           This my site where I have stuff, no idea why I needed this but i have
