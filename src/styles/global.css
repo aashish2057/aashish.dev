@@ -1,9 +1,21 @@
 body {
   background-color: #f3deaf;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   min-height: 100vh;
-  margin: 0;
+  max-width: 80ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header a {
+  color: #000000;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #000000;
+  text-decoration: underline;
 }
 
 footer {
@@ -11,6 +23,7 @@ footer {
   gap: 1rem;
   margin-top: auto;
   margin-bottom: 1em;
+  justify-content: center;
 }
 
 footer a svg {
