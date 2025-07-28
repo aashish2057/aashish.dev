@@ -1,0 +1,10 @@
+name = "aashish-dev"
+compatibility_date = "2025-07-28"
+
+routes = [
+  { pattern = "aashish.dev", custom_domain = true },
+  { pattern = "aashishsharma.dev", custom_domain = true }
+]
+
+[assets]
+directory = "./dist"
