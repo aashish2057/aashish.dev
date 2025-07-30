@@ -1,28 +1,18 @@
 {
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    systems.url = "github:nix-systems/default";
-  };
+  inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-  outputs = {
-    nixpkgs,
-    self,
-    ...
-  } @ inputs: let
-    inherit (nixpkgs) legacyPackages lib;
-
-    systems = import inputs.systems;
-    forEachSystem = lib.genAttrs systems;
-    pkgsForEach = legacyPackages;
+  outputs = inputs: let
+    supportedSystems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
+    forEachSupportedSystem = f:
+      inputs.nixpkgs.lib.genAttrs supportedSystems (system:
+        f {
+          pkgs = import inputs.nixpkgs {inherit system;};
+        });
   in {
-    devShells = forEachSystem (system: let
-      pkgs = pkgsForEach.${system};
-    in {
+    devShells = forEachSupportedSystem ({pkgs}: {
       default = pkgs.mkShell {
         packages = with pkgs; [bun];
       };
     });
-
-    checks = self.devShells;
   };
 }
