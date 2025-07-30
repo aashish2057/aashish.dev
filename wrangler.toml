@@ -6,5 +6,12 @@ routes = [
   { pattern = "aashishsharma.dev", custom_domain = true }
 ]
 
+[build]
+ignore_paths = [
+  "*.nix",
+  "flake.lock",
+  ".envrc"
+]
+
 [assets]
 directory = "./dist"
