@@ -5,6 +5,7 @@ routes = [
   { pattern = "aashish.dev", custom_domain = true },
   { pattern = "aashishsharma.dev", custom_domain = true }
 ]
+preview_urls = true
 
 [assets]
 directory = "./dist"
