@@ -10,8 +10,8 @@
     "fmt": "bunx prettier . --write"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.0",
-    "astro": "^5.11.0",
+    "@astrojs/cloudflare": "12.6.12",
+    "astro": "5.16.6",
     "wrangler": "^4.26.0"
   },
   "devDependencies": {
