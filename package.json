@@ -8,13 +8,15 @@
     "preview": "astro preview",
     "astro": "astro",
     "fmt": "bunx prettier --write .",
-	"fmt:check": "bunx prettier --check .",
-	"lint": "bunx oxlint",
+    "fmt:check": "bunx prettier --check .",
+    "lint": "bunx oxlint",
     "lint:fix": "bunx oxlint --fix"
   },
   "dependencies": {
     "@astrojs/cloudflare": "12.6.12",
+    "@tailwindcss/vite": "^4.1.18",
     "astro": "5.16.6",
+    "tailwindcss": "^4.1.18",
     "wrangler": "^4.26.0"
   },
   "devDependencies": {
