@@ -1,10 +1,10 @@
 # Dev
 
-This project uses [direnv](https://direnv.net/) and [nix](https://nixos.org/) for setting up project dependences.
+This project uses [nix](https://nixos.org/) for setting up project dependences.
 
 ```zsh
-# allow direnv to automatically setup dependecies
-direnv allow
+# install project dependencies
+nix develop -c zsh
 
 # dev server
 bun dev
