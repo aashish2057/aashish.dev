@@ -10,7 +10,7 @@ export interface Props {
 const { title = "Aashish Sharma" } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="bg-[#f3deaf]">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -18,7 +18,7 @@ const { title = "Aashish Sharma" } = Astro.props;
 	<title>{title}</title>
 	<ViewTransitions />
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen max-w-[80ch] ml-auto mr-auto">
     <Header transition:persist/>
 	<slot />
     <Footer transition:persist/>
