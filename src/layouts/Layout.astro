@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
 import "../styles/global.css";
 import Footer from "@/components/Footer.astro";
@@ -15,12 +15,12 @@ const { title = "Aashish Sharma" } = Astro.props;
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-	<title>{title}</title>
-	<ViewTransitions />
+    <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body class="flex flex-col min-h-screen max-w-[80ch] ml-auto mr-auto">
-    <Header transition:persist/>
-	<slot />
-    <Footer transition:persist/>
+    <Header transition:persist />
+    <slot />
+    <Footer transition:persist />
   </body>
 </html>

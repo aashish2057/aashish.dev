@@ -8,7 +8,7 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "noEmit": true,
-	"baseUrl": ".",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
       "public/*": ["public/*"]
