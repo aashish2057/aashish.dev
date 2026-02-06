@@ -1,5 +1,33 @@
 ---
+import { getCollection } from "astro:content";
+
 import Layout from "@/layouts/Layout.astro";
+
+const posts = await getCollection("posts");
+
+const filteredPosts = posts
+  .filter((post) => post.data.publish && !post.data.archived)
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  );
 ---
 
-<Layout />
+<Layout>
+  <ul class="mt-10">
+    {
+      filteredPosts.map((post) => (
+        <li class="ml-5 flex justify-between mr-5">
+          <a
+            href={`/posts/${post.id}`}
+            class="hover:text-foreground-strong-light dark:hover:text-foreground-strong-dark"
+          >
+            {post.data.title}
+          </a>
+          <span class="opacity-70">
+            {post.data.date.toISOString().slice(0, 10)}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
