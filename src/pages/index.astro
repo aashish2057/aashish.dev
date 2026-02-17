@@ -6,7 +6,11 @@ import Layout from "@/layouts/Layout.astro";
 const posts = await getCollection("posts");
 
 const filteredPosts = posts
-  .filter((post) => post.data.publish && !post.data.archived)
+  .filter((post) =>
+    import.meta.env.MODE === "production"
+      ? post.data.publish && !post.data.archived
+      : post,
+  )
   .sort(
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
   );
